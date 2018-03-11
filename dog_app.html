@@ -11726,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,25 +11771,21 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Artificial-Intelligence-Nanodegree">Artificial Intelligence Nanodegree<a class="anchor-link" href="#Artificial-Intelligence-Nanodegree">&#182;</a></h1><h2 id="Convolutional-Neural-Networks">Convolutional Neural Networks<a class="anchor-link" href="#Convolutional-Neural-Networks">&#182;</a></h2><h2 id="Project:-Write-an-Algorithm-for-a-Dog-Identification-App">Project: Write an Algorithm for a Dog Identification App<a class="anchor-link" href="#Project:-Write-an-Algorithm-for-a-Dog-Identification-App">&#182;</a></h2><hr>
-<p>In this notebook, some template code has already been provided for you, and you will need to implement additional functionality to successfully complete this project. You will not need to modify the included code beyond what is requested. Sections that begin with <strong>'(IMPLEMENTATION)'</strong> in the header indicate that the following block of code will require additional functionality which you must provide. Instructions will be provided for each section, and the specifics of the implementation are marked in the code block with a 'TODO' statement. Please be sure to read the instructions carefully!</p>
-<blockquote><p><strong>Note</strong>: Once you have completed all of the code implementations, you need to finalize your work by exporting the iPython Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You can then export the notebook by using the menu above and navigating to  \n",
-    "<strong>File -&gt; Download as -&gt; HTML (.html)</strong>. Include the finished document along with this notebook as your submission.</p>
-</blockquote>
-<p>In addition to implementing code, there will be questions that you must answer which relate to the project and your implementation. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide.</p>
-<blockquote><p><strong>Note:</strong> Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut.  Markdown cells can be edited by double-clicking the cell to enter edit mode.</p>
-</blockquote>
-<p>The rubric contains <em>optional</em> "Stand Out Suggestions" for enhancing the project beyond the minimum requirements. If you decide to pursue the "Stand Out Suggestions", you should include the code in this IPython notebook.</p>
-<hr>
-<h3 id="Why-We're-Here">Why We're Here<a class="anchor-link" href="#Why-We're-Here">&#182;</a></h3><p>In this notebook, you will make the first steps towards developing an algorithm that could be used as part of a mobile or web app.  At the end of this project, your code will accept any user-supplied image as input.  If a dog is detected in the image, it will provide an estimate of the dog's breed.  If a human is detected, it will provide an estimate of the dog breed that is most resembling.  The image below displays potential sample output of your finished project (... but we expect that each student's algorithm will behave differently!).</p>
+<h1 id="Artificial-Intelligence">Artificial Intelligence<a class="anchor-link" href="#Artificial-Intelligence">&#182;</a></h1><h2 id="Convolutional-Neural-Networks">Convolutional Neural Networks<a class="anchor-link" href="#Convolutional-Neural-Networks">&#182;</a></h2><h2 id="Project:-Write-an-Algorithm-for-a-Dog-Identification-App">Project: Write an Algorithm for a Dog Identification App<a class="anchor-link" href="#Project:-Write-an-Algorithm-for-a-Dog-Identification-App">&#182;</a></h2><hr>
+<p>This project is first steps towards developing an algorithm that could be used as part of a mobile or web app.</p>
+<p>At the end of this project, your code will accept any user-supplied image as input.</p>
+<p>If a dog is detected in the image, it will provide an estimate of the dog's breed.</p>
+<p>If a human is detected, it will provide an estimate of the dog breed that is most resembling.</p>
+<p>The image below displays potential sample output of your finished project (... but we expect that each student's algorithm will behave differently!).</p>
 <p><img src="images/sample_dog_output.png" alt="Sample Dog Output"></p>
-<p>In this real-world setting, you will need to piece together a series of models to perform different tasks; for instance, the algorithm that detects humans in an image will be different from the CNN that infers dog breed.  There are many points of possible failure, and no perfect algorithm exists.  Your imperfect solution will nonetheless create a fun user experience!</p>
-<h3 id="The-Road-Ahead">The Road Ahead<a class="anchor-link" href="#The-Road-Ahead">&#182;</a></h3><p>We break the notebook into separate steps.  Feel free to use the links below to navigate the notebook.</p>
+<p>In this real-world setting, you will need to piece together a series of models to perform different tasks; for instance, the algorithm that detects humans in an image will be different from the CNN that infers dog breed.</p>
+<p>There are many points of possible failure, and no perfect algorithm exists.</p>
+<p>Your imperfect solution will nonetheless create a fun user experience!</p>
+<h3 id="The-Road-Ahead">The Road Ahead<a class="anchor-link" href="#The-Road-Ahead">&#182;</a></h3><p>We break the notebook into separate steps:</p>
 <ul>
 <li><a href="#step0">Step 0</a>: Import Datasets</li>
 <li><a href="#step1">Step 1</a>: Detect Humans</li>
@@ -11804,7 +11798,8 @@ div#notebook {
 </ul>
 <hr>
 <p><a id='step0'></a></p>
-<h2 id="Step-0:-Import-Datasets">Step 0: Import Datasets<a class="anchor-link" href="#Step-0:-Import-Datasets">&#182;</a></h2><h3 id="Import-Dog-Dataset">Import Dog Dataset<a class="anchor-link" href="#Import-Dog-Dataset">&#182;</a></h3><p>In the code cell below, we import a dataset of dog images.  We populate a few variables through the use of the <code>load_files</code> function from the scikit-learn library:</p>
+<h2 id="Step-0:-Import-Datasets">Step 0: Import Datasets<a class="anchor-link" href="#Step-0:-Import-Datasets">&#182;</a></h2><h3 id="Import-Dog-Dataset">Import Dog Dataset<a class="anchor-link" href="#Import-Dog-Dataset">&#182;</a></h3><p>In the code cell below, we import a dataset of dog images.</p>
+<p>We populate a few variables through the use of the <code>load_files</code> function from the scikit-learn library:</p>
 <ul>
 <li><code>train_files</code>, <code>valid_files</code>, <code>test_files</code> - numpy arrays containing file paths to images</li>
 <li><code>train_targets</code>, <code>valid_targets</code>, <code>test_targets</code> - numpy arrays containing onehot-encoded classification labels </li>
@@ -11856,7 +11851,9 @@ div#notebook {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 133 total dog categories.
@@ -11873,8 +11870,7 @@ There are 836 test dog images.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11908,7 +11904,9 @@ There are 836 test dog images.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 13233 total human images.
@@ -11920,8 +11918,7 @@ There are 836 test dog images.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11978,7 +11975,9 @@ There are 836 test dog images.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of faces detected: 1
@@ -11987,7 +11986,9 @@ There are 836 test dog images.
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -13356,14 +13357,18 @@ y/W51mWwuFyX63J9rnUZLC7X5bpcn2tdBovLdbku1+dal8Hicl2uy/W51mWwuFyX63J9rvX/Ac1N
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before using any of the face detectors, it is standard procedure to convert the images to grayscale.  The <code>detectMultiScale</code> function executes the classifier stored in <code>face_cascade</code> and takes the grayscale image as a parameter.</p>
-<p>In the above code, <code>faces</code> is a numpy array of detected faces, where each row corresponds to a detected face.  Each detected face is a 1D array with four entries that specifies the bounding box of the detected face.  The first two entries in the array (extracted in the above code as <code>x</code> and <code>y</code>) specify the horizontal and vertical positions of the top left corner of the bounding box.  The last two entries in the array (extracted here as <code>w</code> and <code>h</code>) specify the width and height of the box.</p>
-<h3 id="Write-a-Human-Face-Detector">Write a Human Face Detector<a class="anchor-link" href="#Write-a-Human-Face-Detector">&#182;</a></h3><p>We can use this procedure to write a function that returns <code>True</code> if a human face is detected in an image and <code>False</code> otherwise.  This function, aptly named <code>face_detector</code>, takes a string-valued file path to an image as input and appears in the code block below.</p>
+<p>Before using any of the face detectors, it is standard procedure to convert the images to grayscale.</p>
+<p>The <code>detectMultiScale</code> function executes the classifier stored in <code>face_cascade</code> and takes the grayscale image as a parameter.</p>
+<p>In the above code, <code>faces</code> is a numpy array of detected faces, where each row corresponds to a detected face.</p>
+<p>Each detected face is a 1D array with four entries that specifies the bounding box of the detected face.</p>
+<p>The first two entries in the array (extracted in the above code as <code>x</code> and <code>y</code>) specify the horizontal and vertical positions of the top left corner of the bounding box.</p>
+<p>The last two entries in the array (extracted here as <code>w</code> and <code>h</code>) specify the width and height of the box.</p>
+<h3 id="Write-a-Human-Face-Detector">Write a Human Face Detector<a class="anchor-link" href="#Write-a-Human-Face-Detector">&#182;</a></h3><p>We can use this procedure to write a function that returns <code>True</code> if a human face is detected in an image and <code>False</code> otherwise.</p>
+<p>This function, aptly named <code>face_detector</code>, takes a string-valued file path to an image as input and appears in the code block below.</p>
 
 </div>
 </div>
@@ -13386,8 +13391,7 @@ y/W51mWwuFyX63J9rnUZLC7X5bpcn2tdBovLdbku1+dal8Hicl2uy/W51mWwuFyX63J9rvX/Ac1N
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13396,7 +13400,9 @@ y/W51mWwuFyX63J9rnUZLC7X5bpcn2tdBovLdbku1+dal8Hicl2uy/W51mWwuFyX63J9rvX/Ac1N
 <li>What percentage of the first 100 images in <code>human_files</code> have a detected human face?  </li>
 <li>What percentage of the first 100 images in <code>dog_files</code> have a detected human face? </li>
 </ul>
-<p>Ideally, we would like 100% of human images with a detected face and 0% of dog images with a detected face.  You will see that our algorithm falls short of this goal, but still gives acceptable performance.  We extract the file paths for the first 100 images from each of the datasets and store them in the numpy arrays <code>human_files_short</code> and <code>dog_files_short</code>.</p>
+<p>Ideally, we would like 100% of human images with a detected face and 0% of dog images with a detected face.</p>
+<p>You will see that our algorithm falls short of this goal, but still gives acceptable performance.</p>
+<p>We extract the file paths for the first 100 images from each of the datasets and store them in the numpy arrays <code>human_files_short</code> and <code>dog_files_short</code>.</p>
 <p><strong>Answer:</strong></p>
 <ul>
 <li>98% of the first 100 images in human_images have a detected human face.</li>
@@ -13432,7 +13438,9 @@ y/W51mWwuFyX63J9rnUZLC7X5bpcn2tdBovLdbku1+dal8Hicl2uy/W51mWwuFyX63J9rvX/Ac1N
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percentage of human faces detected in human_files_short =  98.0
@@ -13445,41 +13453,31 @@ Percentage of human faces detected in dog_files_short =  11.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
-<p><strong>Answer:</strong> No, asking the user to always provide a clear view of the face is not a reasonable expectation. Moreover, the Haar Cascade classifier does not only require a clear view of the face, but also proper illumination, an upright angle and sharp facial features. It seems that an algorithm which is invariant to illumination and angle of faces like Convolutional Neural Networks should be able to perform better on faces that are not clearly presented.</p>
-<p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
+<p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). 
+In your opinion, is this a reasonable expectation to pose on the user? 
+If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
+<p><strong>Answer:</strong> No, asking the user to always provide a clear view of the face is not a reasonable expectation.</p>
+<p>Moreover, the Haar Cascade classifier does not only require a clear view of the face, but also proper illumination, an upright angle and sharp facial features.</p>
+<p>It seems that an algorithm which is invariant to illumination and angle of faces like Convolutional Neural Networks should be able to perform better on faces that are not clearly presented.</p>
+<p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).</p>
+<p>Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## (Optional) TODO: Report the performance of another  </span>
-<span class="c1">## face detection algorithm on the LFW dataset</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <p><a id='step2'></a></p>
-<h2 id="Step-2:-Detect-Dogs">Step 2: Detect Dogs<a class="anchor-link" href="#Step-2:-Detect-Dogs">&#182;</a></h2><p>In this section, we use a pre-trained <a href="http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006">ResNet-50</a> model to detect dogs in images.  Our first line of code downloads the ResNet-50 model, along with weights that have been trained on <a href="http://www.image-net.org/">ImageNet</a>, a very large, very popular dataset used for image classification and other vision tasks.  ImageNet contains over 10 million URLs, each linking to an image containing an object from one of <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a">1000 categories</a>.  Given an image, this pre-trained ResNet-50 model returns a prediction (derived from the available categories in ImageNet) for the object that is contained in the image.</p>
+<h2 id="Step-2:-Detect-Dogs">Step 2: Detect Dogs<a class="anchor-link" href="#Step-2:-Detect-Dogs">&#182;</a></h2><p>In this section, we use a pre-trained <a href="http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006">ResNet-50</a> model to detect dogs in images.</p>
+<p>Our first line of code downloads the ResNet-50 model, along with weights that have been trained on <a href="http://www.image-net.org/">ImageNet</a>, a very large, very popular dataset used for image classification and other vision tasks.  ImageNet contains over 10 million URLs, each linking to an image containing an object from one of <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a">1000 categories</a>.</p>
+<p>Given an image, this pre-trained ResNet-50 model returns a prediction (derived from the available categories in ImageNet) for the object that is contained in the image.</p>
 
 </div>
 </div>
@@ -13500,22 +13498,28 @@ Percentage of human faces detected in dog_files_short =  11.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Pre-process-the-Data">Pre-process the Data<a class="anchor-link" href="#Pre-process-the-Data">&#182;</a></h3><p>When using TensorFlow as backend, Keras CNNs require a 4D array (which we'll also refer to as a 4D tensor) as input, with shape</p>
-$$
+<p>$$
 (\text{nb_samples}, \text{rows}, \text{columns}, \text{channels}),
-$$<p>where <code>nb_samples</code> corresponds to the total number of images (or samples), and <code>rows</code>, <code>columns</code>, and <code>channels</code> correspond to the number of rows, columns, and channels for each image, respectively.</p>
-<p>The <code>path_to_tensor</code> function below takes a string-valued file path to a color image as input and returns a 4D tensor suitable for supplying to a Keras CNN.  The function first loads the image and resizes it to a square image that is $224 \times 224$ pixels.  Next, the image is converted to an array, which is then resized to a 4D tensor.  In this case, since we are working with color images, each image has three channels.  Likewise, since we are processing a single image (or sample), the returned tensor will always have shape</p>
-$$
+$$</p>
+<p>where <code>nb_samples</code> corresponds to the total number of images (or samples), and <code>rows</code>, <code>columns</code>, and <code>channels</code> correspond to the number of rows, columns, and channels for each image, respectively.</p>
+<p>The <code>path_to_tensor</code> function below takes a string-valued file path to a color image as input and returns a 4D tensor suitable for supplying to a Keras CNN.</p>
+<p>The function first loads the image and resizes it to a square image that is $224 \times 224$ pixels.  Next, the image is converted to an array, which is then resized to a 4D tensor.</p>
+<p>In this case, since we are working with color images, each image has three channels.</p>
+<p>Likewise, since we are processing a single image (or sample), the returned tensor will always have shape</p>
+<p>$$
 (1, 224, 224, 3).
-$$<p>The <code>paths_to_tensor</code> function takes a numpy array of string-valued image paths as input and returns a 4D tensor with shape</p>
-$$
+$$</p>
+<p>The <code>paths_to_tensor</code> function takes a numpy array of string-valued image paths as input and returns a 4D tensor with shape</p>
+<p>$$
 (\text{nb_samples}, 224, 224, 3).
-$$<p>Here, <code>nb_samples</code> is the number of samples, or number of images, in the supplied array of image paths.  It is best to think of <code>nb_samples</code> as the number of 3D tensors (where each 3D tensor corresponds to a different image) in your dataset!</p>
+$$</p>
+<p>Here, <code>nb_samples</code> is the number of samples, or number of images, in the supplied array of image paths.</p>
+<p>It is best to think of <code>nb_samples</code> as the number of 3D tensors (where each 3D tensor corresponds to a different image) in your dataset!</p>
 
 </div>
 </div>
@@ -13546,13 +13550,16 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Making-Predictions-with-ResNet-50">Making Predictions with ResNet-50<a class="anchor-link" href="#Making-Predictions-with-ResNet-50">&#182;</a></h3><p>Getting the 4D tensor ready for ResNet-50, and for any other pre-trained model in Keras, requires some additional processing.  First, the RGB image is converted to BGR by reordering the channels.  All pre-trained models have the additional normalization step that the mean pixel (expressed in RGB as $[103.939, 116.779, 123.68]$ and calculated from all pixels in all images in ImageNet) must be subtracted from every pixel in each image.  This is implemented in the imported function <code>preprocess_input</code>.  If you're curious, you can check the code for <code>preprocess_input</code> <a href="https://github.com/fchollet/keras/blob/master/keras/applications/imagenet_utils.py">here</a>.</p>
-<p>Now that we have a way to format our image for supplying to ResNet-50, we are now ready to use the model to extract the predictions.  This is accomplished with the <code>predict</code> method, which returns an array whose $i$-th entry is the model's predicted probability that the image belongs to the $i$-th ImageNet category.  This is implemented in the <code>ResNet50_predict_labels</code> function below.</p>
+<h3 id="Making-Predictions-with-ResNet-50">Making Predictions with ResNet-50<a class="anchor-link" href="#Making-Predictions-with-ResNet-50">&#182;</a></h3><p>Getting the 4D tensor ready for ResNet-50, and for any other pre-trained model in Keras, requires some additional processing.  First, the RGB image is converted to BGR by reordering the channels.</p>
+<p>All pre-trained models have the additional normalization step that the mean pixel (expressed in RGB as $[103.939, 116.779, 123.68]$ and calculated from all pixels in all images in ImageNet) must be subtracted from every pixel in each image.  This is implemented in the imported function <code>preprocess_input</code>.</p>
+<p>If you're curious, you can check the code for <code>preprocess_input</code> <a href="https://github.com/fchollet/keras/blob/master/keras/applications/imagenet_utils.py">here</a>.</p>
+<p>Now that we have a way to format our image for supplying to ResNet-50, we are now ready to use the model to extract the predictions.</p>
+<p>This is accomplished with the <code>predict</code> method, which returns an array whose $i$-th entry is the model's predicted probability that the image belongs to the $i$-th ImageNet category.</p>
+<p>This is implemented in the <code>ResNet50_predict_labels</code> function below.</p>
 <p>By taking the argmax of the predicted probability vector, we obtain an integer corresponding to the model's predicted object class, which we can identify with an object category through the use of this <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a">dictionary</a>.</p>
 
 </div>
@@ -13576,12 +13583,12 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Write-a-Dog-Detector">Write a Dog Detector<a class="anchor-link" href="#Write-a-Dog-Detector">&#182;</a></h3><p>While looking at the <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a">dictionary</a>, you will notice that the categories corresponding to dogs appear in an uninterrupted sequence and correspond to dictionary keys 151-268, inclusive, to include all categories from <code>'Chihuahua'</code> to <code>'Mexican hairless'</code>.  Thus, in order to check to see if an image is predicted to contain a dog by the pre-trained ResNet-50 model, we need only check if the <code>ResNet50_predict_labels</code> function above returns a value between 151 and 268 (inclusive).</p>
+<h3 id="Write-a-Dog-Detector">Write a Dog Detector<a class="anchor-link" href="#Write-a-Dog-Detector">&#182;</a></h3><p>While looking at the <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a">dictionary</a>, you will notice that the categories corresponding to dogs appear in an uninterrupted sequence and correspond to dictionary keys 151-268, inclusive, to include all categories from <code>'Chihuahua'</code> to <code>'Mexican hairless'</code>.</p>
+<p>Thus, in order to check to see if an image is predicted to contain a dog by the pre-trained ResNet-50 model, we need only check if the <code>ResNet50_predict_labels</code> function above returns a value between 151 and 268 (inclusive).</p>
 <p>We use these ideas to complete the <code>dog_detector</code> function below, which returns <code>True</code> if a dog is detected in an image (and <code>False</code> if not).</p>
 
 </div>
@@ -13603,8 +13610,7 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13644,7 +13650,9 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percentage of dogs detected in human_files_short images =  1.0
@@ -13657,15 +13665,17 @@ Percentage of dogs detected in dog_files_short =  100.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <p><a id='step3'></a></p>
-<h2 id="Step-3:-Create-a-CNN-to-Classify-Dog-Breeds-(from-Scratch)">Step 3: Create a CNN to Classify Dog Breeds (from Scratch)<a class="anchor-link" href="#Step-3:-Create-a-CNN-to-Classify-Dog-Breeds-(from-Scratch)">&#182;</a></h2><p>Now that we have functions for detecting humans and dogs in images, we need a way to predict breed from images.  In this step, you will create a CNN that classifies dog breeds.  You must create your CNN <em>from scratch</em> (so, you can't use transfer learning <em>yet</em>!), and you must attain a test accuracy of at least 1%.  In Step 5 of this notebook, you will have the opportunity to use transfer learning to create a CNN that attains greatly improved accuracy.</p>
-<p>Be careful with adding too many trainable layers!  More parameters means longer training, which means you are more likely to need a GPU to accelerate the training process.  Thankfully, Keras provides a handy estimate of the time that each epoch is likely to take; you can extrapolate this estimate to figure out how long it will take for your algorithm to train.</p>
+<h2 id="Step-3:-Create-a-CNN-to-Classify-Dog-Breeds-(from-Scratch)">Step 3: Create a CNN to Classify Dog Breeds (from Scratch)<a class="anchor-link" href="#Step-3:-Create-a-CNN-to-Classify-Dog-Breeds-(from-Scratch)">&#182;</a></h2><p>Now that we have functions for detecting humans and dogs in images, we need a way to predict breed from images.  In this step, you will create a CNN that classifies dog breeds.</p>
+<p>You must create your CNN <em>from scratch</em> (so, you can't use transfer learning <em>yet</em>!), and you must attain a test accuracy of at least 1%.  In Step 5 of this notebook, you will have the opportunity to use transfer learning to create a CNN that attains greatly improved accuracy.</p>
+<p>Be careful with adding too many trainable layers!</p>
+<p>More parameters means longer training, which means you are more likely to need a GPU to accelerate the training process.</p>
+<p>Thankfully, Keras provides a handy estimate of the time that each epoch is likely to take; you can extrapolate this estimate to figure out how long it will take for your algorithm to train.</p>
 <p>We mention that the task of assigning breed to dogs from images is considered exceptionally challenging.  To see why, consider that <em>even a human</em> would have great difficulty in distinguishing between a Brittany and a Welsh Springer Spaniel.</p>
 <table>
 <thead><tr>
@@ -13711,7 +13721,8 @@ Percentage of dogs detected in dog_files_short =  100.0
 </tbody>
 </table>
 <p>We also mention that random chance presents an exceptionally low bar: setting aside the fact that the classes are slightly imabalanced, a random guess will provide a correct answer roughly 1 in 133 times, which corresponds to an accuracy of less than 1%.</p>
-<p>Remember that the practice is far ahead of the theory in deep learning.  Experiment with many different architectures, and trust your intuition.  And, of course, have fun!</p>
+<p>Remember that the practice is far ahead of the theory in deep learning.</p>
+<p>Experiment with many different architectures, and trust your intuition.  And, of course, have fun!</p>
 <h3 id="Pre-process-the-Data">Pre-process the Data<a class="anchor-link" href="#Pre-process-the-Data">&#182;</a></h3><p>We rescale the images by dividing every pixel in every image by 255.</p>
 
 </div>
@@ -13740,7 +13751,9 @@ Percentage of dogs detected in dog_files_short =  100.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 6680/6680 [02:24&lt;00:00, 46.37it/s]
@@ -13754,8 +13767,7 @@ Percentage of dogs detected in dog_files_short =  100.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13767,9 +13779,13 @@ Percentage of dogs detected in dog_files_short =  100.0
 <p>We have imported some Python modules to get you started, but feel free to import as many modules as you need.  If you end up getting stuck, here's a hint that specifies a model that trains relatively fast on CPU and attains &gt;1% test accuracy in 5 epochs:</p>
 <p><img src="images/sample_cnn.png" alt="Sample CNN"></p>
 <p><strong>Question 4:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  If you chose to use the hinted architecture above, describe why you think that CNN architecture should work well for the image classification task.</p>
-<p><strong>Answer:</strong>  I read this blog post from Xudong Cao - <a href="https://kaggle2.blob.core.windows.net/forum-message-attachments/69182/2287/A%20practical%20theory%20for%20designing%20very%20deep%20convolutional%20neural%20networks.pdf">A practical theory for designing very deep convolutional networks</a> as a reference guide on how to go about designing a convolutional neural network for an image classification task. The post breaks down the CNN architecture into 2 parts - classifier level, the topmost fully connected layers, and the feature level, convolutional layers responsible for feature extraction from the input image. It talks in detail about designing the feature level. Specifically, it talks about the receptive field of a node in each layer (the region of the original image accessible to the node) and assumes that higher the receptive field, more are the chances of finding more complex patterns.</p>
+<p><strong>Answer:</strong>  I read this blog post from Xudong Cao - <a href="https://kaggle2.blob.core.windows.net/forum-message-attachments/69182/2287/A%20practical%20theory%20for%20designing%20very%20deep%20convolutional%20neural%20networks.pdf">A practical theory for designing very deep convolutional networks</a> as a reference guide on how to go about designing a convolutional neural network for an image classification task.</p>
+<p>The post breaks down the CNN architecture into 2 parts - classifier level, the topmost fully connected layers, and the feature level, convolutional layers responsible for feature extraction from the input image.</p>
+<p>It talks in detail about designing the feature level.</p>
+<p>Specifically, it talks about the receptive field of a node in each layer (the region of the original image accessible to the node) and assumes that higher the receptive field, more are the chances of finding more complex patterns.</p>
 <p>The second constraint that it places on the design of convolutional layers is that one must stop adding additional layers when the recpetive field of a node reaches image size, as adding more layers may result in overfitting.</p>
-<p>Keeping these 2 constraints in mind, and using the model given in the hint above as a benchmark, I designed a model with 3 convolutional layers having kernel sizes 5X5, 5X5 and 3X3 with 16, 32 and 64 feature maps. The nodes in the final layer have a receptive field of 19X19. The last layer uses a 3X3 (instead of 5X5, which was my original intention) kernel to lower the number of training parameters. For the same reason, there are only 3 convolutional layers.</p>
+<p>Keeping these 2 constraints in mind, and using the model given in the hint above as a benchmark, I designed a model with 3 convolutional layers having kernel sizes 5X5, 5X5 and 3X3 with 16, 32 and 64 feature maps.</p>
+<p>The nodes in the final layer have a receptive field of 19X19. The last layer uses a 3X3 (instead of 5X5, which was my original intention) kernel to lower the number of training parameters. For the same reason, there are only 3 convolutional layers.</p>
 <p>The next layers are a global average pooling layer and a fully connected softmax output layer. These were chosen to minimize the number of training parameters.</p>
 
 </div>
@@ -13812,7 +13828,9 @@ Percentage of dogs detected in dog_files_short =  100.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
@@ -13846,8 +13864,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13868,8 +13885,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13909,7 +13925,9 @@ _________________________________________________________________
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
@@ -13948,7 +13966,9 @@ Epoch 10/10
 </div>
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[29]:</div>
+
 
 
 
@@ -13962,8 +13982,7 @@ Epoch 10/10
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13984,8 +14003,7 @@ Epoch 10/10
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14016,7 +14034,9 @@ Epoch 10/10
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 5.6220%
@@ -14028,8 +14048,7 @@ Epoch 10/10
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14056,8 +14075,7 @@ Epoch 10/10
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14087,7 +14105,9 @@ Epoch 10/10
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
@@ -14109,8 +14129,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14131,8 +14150,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14162,7 +14180,9 @@ _________________________________________________________________
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
@@ -14231,7 +14251,9 @@ Epoch 20/20
 </div>
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[35]:</div>
+
 
 
 
@@ -14245,8 +14267,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14267,8 +14288,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14299,7 +14319,9 @@ Epoch 20/20
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 44.9761%
@@ -14311,8 +14333,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14341,8 +14362,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14389,8 +14409,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14400,10 +14419,16 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
-<p><strong>Answer:</strong> To get to the final CNN architecture, first I identified the type of data I have to classify. It is quite similar to the Imagenet data as Imagenet also has images of dogs in natural settings and classes in Imagenet related to dog breeds are also similar to the classes given here. A big difference between the Imagenet dataset and our dataset is size - where Imagenet has 14 million images, we have 8,351 images.</p>
-<p>All of the given CNN architecture have been trained and tested on Imagenet to produce state-of-the-art results. Since our classification task is very similar to the one already performed by these architectures, all we need is to attach an output softmax layer and train it. The only consideration worth considering now is to select an architecture with the greatest accuracy and minimum parameters.</p>
-<p>Upon reading the <a href="https://arxiv.org/abs/1610.02357">Xception</a> paper, I realised that the Xception architecture minimizes the number of parameters by using depthwise seperable convolutions to seperate space and channel correlarions learned from previous layers. It also has the highest accuracy among the given architectures on Imagenet data. I was curious to see how it would perform on our dataset and hence, I chose it for transfer learning.</p>
-<p>The earlier attempt made in Step 3 to create a CNN architecture from scratch did not succeed as it was limited in its receptive field and thereby, limited in its ability to represent complex models. Also the lack of computing resources forced us to implement a small architecture with less number of layers and train it for a limited number of epochs (= 10).</p>
+<p><strong>Answer:</strong> To get to the final CNN architecture, first I identified the type of data I have to classify.</p>
+<p>It is quite similar to the Imagenet data as Imagenet also has images of dogs in natural settings and classes in Imagenet related to dog breeds are also similar to the classes given here.</p>
+<p>A big difference between the Imagenet dataset and our dataset is size - where Imagenet has 14 million images, we have 8,351 images.</p>
+<p>All of the given CNN architecture have been trained and tested on Imagenet to produce state-of-the-art results.</p>
+<p>Since our classification task is very similar to the one already performed by these architectures, all we need is to attach an output softmax layer and train it.</p>
+<p>The only consideration worth considering now is to select an architecture with the greatest accuracy and minimum parameters.</p>
+<p>Upon reading the <a href="https://arxiv.org/abs/1610.02357">Xception</a> paper, I realised that the Xception architecture minimizes the number of parameters by using depthwise seperable convolutions to seperate space and channel correlarions learned from previous layers. It also has the highest accuracy among the given architectures on Imagenet data.</p>
+<p>I was curious to see how it would perform on our dataset and hence, I chose it for transfer learning.</p>
+<p>The earlier attempt made in Step 3 to create a CNN architecture from scratch did not succeed as it was limited in its receptive field and thereby, limited in its ability to represent complex models.</p>
+<p>Also the lack of computing resources forced us to implement a small architecture with less number of layers and train it for a limited number of epochs (= 10).</p>
 
 </div>
 </div>
@@ -14430,7 +14455,9 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
@@ -14452,8 +14479,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14475,8 +14501,7 @@ _________________________________________________________________
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14509,7 +14534,9 @@ _________________________________________________________________
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
@@ -14578,7 +14605,9 @@ Epoch 20/20
 </div>
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[42]:</div>
+
 
 
 
@@ -14592,8 +14621,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14615,8 +14643,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14647,7 +14674,9 @@ Epoch 20/20
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 82.7751%
@@ -14659,8 +14688,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14703,8 +14731,7 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14744,15 +14771,15 @@ Epoch 20/20
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <p><a id='step7'></a></p>
 <h2 id="Step-7:-Test-Your-Algorithm">Step 7: Test Your Algorithm<a class="anchor-link" href="#Step-7:-Test-Your-Algorithm">&#182;</a></h2><p>In this section, you will take your new algorithm for a spin!  What kind of dog does the algorithm think that <strong>you</strong> look like?  If you have a dog, does it predict your dog's breed accurately?  If you have a cat, does it mistakenly think that your cat is a dog?</p>
-<h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.  Feel free to use any images you like.  Use at least two human and two dog images.</p>
+<h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.</p>
+<p>Use at least two human and two dog images.</p>
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
 <p><strong>Answer:</strong> The algorithm performs well but is also constrained in a few cases. As can be seen below, I have used my own pictures. The algorithm classifies me as a human who looks like a Dachsund!! 3 possible points of improvement -</p>
 <ul>
@@ -14794,7 +14821,9 @@ Epoch 20/20
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A human is detected who looks like a  Dachshund
@@ -14803,7 +14832,9 @@ Epoch 20/20
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -16517,7 +16548,9 @@ xAAAAABJRU5ErkJggg==
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Neither a dog, nor a human was detected in the image. There seems to be an error.
@@ -16526,7 +16559,9 @@ xAAAAABJRU5ErkJggg==
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -18288,7 +18323,9 @@ HtouHMiFXdiFPbRdOJALu7ALfl9NIgAAACRJREFUe2i7cCAXdmEX9tB24UAu7MIu7KHtwoFc2IVd
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A human is detected who looks like a  Dachshund
@@ -18297,7 +18334,9 @@ HtouHMiFXdiFPbRdOJALu7ALfl9NIgAAACRJREFUe2i7cCAXdmEX9tB24UAu7MIu7KHtwoFc2IVd
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -21007,7 +21046,9 @@ jRo1atwB+F+ODWkkvhUrrgAAAABJRU5ErkJggg==
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A human is detected who looks like a  Dachshund
@@ -21016,7 +21057,9 @@ jRo1atwB+F+ODWkkvhUrrgAAAABJRU5ErkJggg==
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -22353,7 +22396,9 @@ Wn9+6Bbz9C3AIzVPTwD/pN5/y3gau873sOb0vCX8UEX2Hqs/Tw7X7i2es3uBB+s5+wtg9mbzs4f0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A dog is detected. Its breed is  Golden_retriever
@@ -22362,7 +22407,9 @@ Wn9+6Bbz9C3AIzVPTwD/pN5/y3gau873sOb0vCX8UEX2Hqs/Tw7X7i2es3uBB+s5+wtg9mbzs4f0
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -24112,7 +24159,9 @@ AABJRU5ErkJggg==
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A dog is detected. Its breed is  Glen_of_imaal_terrier
@@ -24121,7 +24170,9 @@ AABJRU5ErkJggg==
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -25692,19 +25743,6 @@ XCict/N23rbauVA4b+ftvG21c6Fw3s7bedtq/y/U0zxikp3Z6gAAAABJRU5ErkJggg==
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
